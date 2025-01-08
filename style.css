@@ -4,6 +4,10 @@
     font-family: inter;
 }
 
+body{
+    background-color: black;
+    color: white;
+}
 .left{
     width: 25vw;
     padding: 12px;
@@ -14,6 +18,7 @@
 }
 .right{
     width: 75vw;
+    margin: 16px 0;
 }
 
 .home ul li{
@@ -28,10 +33,15 @@
 .library-img{
     width: 15px;
 }
-
-.library-box{
+.library-heading{
+    gap: 8px;
+}
+.library{
+    flex-direction: column;
     gap: 10px;
     font-weight: 500;
+    min-height: 80vh;
+    position: relative;
 }
 
 .logo{
@@ -39,3 +49,65 @@
     padding: 0;
     margin: 0;
 }
+
+
+.footer {
+    font-size: 9px; 
+    display: flex;
+    min-width: 25vw;
+    gap: 8px;
+    position: absolute;
+    bottom: 0;
+    width: 25vw;
+    margin-bottom: 5px;
+}
+
+.footer a{
+    color: gray;
+}
+
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(34,34,34);
+}
+
+.header > *{
+    padding: 20px;
+}
+
+.spotifyPlaylists{
+    padding: 6px;
+    font-size: 12px;
+}
+
+.card{
+    background-color: rgb(113, 240, 16);
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 200px;
+    height: 250px;
+    align-items: center;
+}
+
+.card-img{
+    width: 170px;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 5px;
+}
+
+.card-text{
+  padding-right: 60px;
+  gap: 5px;
+}
+
+.carContainer{
+    display: flex;
+    flex-direction: row;
+}
+
