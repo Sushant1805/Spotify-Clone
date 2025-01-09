@@ -77,37 +77,49 @@ body{
     padding: 20px;
 }
 
+
+.cardContainer{
+    margin: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+}
 .spotifyPlaylists{
-    padding: 6px;
-    font-size: 12px;
+    padding: 16px;
 }
 
 .card{
-    background-color: rgb(113, 240, 16);
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
     width: 200px;
-    height: 250px;
-    align-items: center;
+    padding: 10px;
+    background-color: #252525;
+    position: relative;
 }
 
-.card-img{
-    width: 170px;
-    padding-top: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 5px;
+.card img{
+    width: 100%;
+    object-fit: contain;
 }
 
-.card-text{
-  padding-right: 60px;
-  gap: 5px;
+.card > *{
+    padding-top:10px ;
 }
 
-.carContainer{
-    display: flex;
-    flex-direction: row;
+.play-img{
+    color: #168b3f;
+}
+.play{
+    position: absolute;
+    right: 20px;
+    top: 190px;
+    opacity: 0;
 }
 
+.card:hover{
+    .play{
+        right: 20px;
+        top: 150px;
+        opacity: 1;
+        transition: ease-in-out 0.2s;
+    }
+}
