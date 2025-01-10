@@ -7,6 +7,7 @@
 body{
     background-color: black;
     color: white;
+    height: 80vh;
 }
 .left{
     width: 25vw;
@@ -19,6 +20,7 @@ body{
 .right{
     width: 75vw;
     margin: 16px 0;
+    position: relative;
 }
 
 .home ul li{
@@ -123,3 +125,54 @@ body{
         transition: ease-in-out 0.2s;
     }
 }
+
+.SignUP{
+    font-weight: 600;
+    background-color: black;
+    color: #424141;
+    border: none;
+    height: 30px;
+    border-radius: 15px;
+    width: 80px;
+    cursor: pointer;
+
+}
+
+
+.SignUP:hover{
+    font-size: 15px;
+    color: white;
+    transition: ease-in-out 0.2s ;
+    width: 85px;
+    height: 35px;
+}
+
+.Login{
+    font-weight: 600;
+    background-color: rgb(255, 255, 255);
+    color: rgb(8, 8, 8);
+    border: none;
+    height: 30px;
+    border-radius: 15px;
+    width: 80px;
+    cursor: pointer;
+}
+
+.Login:hover{
+    font-size: 15px;
+    color: #424141;
+    transition: ease-in-out 0.2s ;
+    width: 85px;
+    height: 35px;
+}
+
+.playbar{
+    position: absolute;
+    bottom: 30px;
+    background-color: #5bda88;
+    width: 100%;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+}
+
