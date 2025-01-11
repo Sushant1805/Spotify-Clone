@@ -1,178 +1,216 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: inter;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: inter;
 }
 
-body{
-    background-color: black;
-    color: white;
-    height: 80vh;
+body {
+  background-color: black;
+  color: white;
+  height: 80vh;
 }
-.left{
-    width: 25vw;
-    padding: 12px;
-}
-
-.home{
-    padding: 2px;
-}
-.right{
-    width: 75vw;
-    margin: 16px 0;
-    position: relative;
+.left {
+  width: 25vw;
+  padding: 12px;
 }
 
-.home ul li{
-    display: flex;
-    list-style: none;
-    width: 15px;
-    gap: 10px;
-    padding-top: 15px;
-    font-weight: 500;
+.home {
+  padding: 2px;
+}
+.right {
+  width: 75vw;
+  margin: 16px 0;
+  position: relative;
 }
 
-.library-img{
-    width: 15px;
-}
-.library-heading{
-    gap: 8px;
-}
-.library{
-    flex-direction: column;
-    gap: 10px;
-    font-weight: 500;
-    min-height: 80vh;
-    position: relative;
+.home ul li {
+  display: flex;
+  list-style: none;
+  width: 15px;
+  gap: 10px;
+  padding-top: 15px;
+  font-weight: 500;
 }
 
-.logo{
-    width: 25px;
-    padding: 0;
-    margin: 0;
+.library-img {
+  width: 15px;
+}
+.library-heading {
+  gap: 8px;
+}
+.library {
+  flex-direction: column;
+  gap: 10px;
+  font-weight: 500;
+  min-height: 80vh;
+  position: relative;
 }
 
+.logo {
+  width: 25px;
+  padding: 0;
+  margin: 0;
+}
 
 .footer {
-    font-size: 9px; 
-    display: flex;
-    min-width: 25vw;
-    gap: 8px;
-    position: absolute;
-    bottom: 0;
-    width: 25vw;
-    margin-bottom: 5px;
+  font-size: 9px;
+  display: flex;
+  min-width: 25vw;
+  gap: 8px;
+  position: absolute;
+  bottom: 0;
+  width: 25vw;
+  margin-bottom: 5px;
 }
 
-.footer a{
-    color: gray;
+.footer a {
+  color: gray;
 }
 
-
-.header{
-    display: flex;
-    justify-content: space-between;
-    background-color: rgb(34,34,34);
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(34, 34, 34);
 }
 
-.header > *{
-    padding: 20px;
+.header > * {
+  padding: 20px;
 }
 
-
-.cardContainer{
-    margin: 30px;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    flex-wrap: wrap;
+.cardContainer {
+  margin: 30px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
 }
-.spotifyPlaylists{
-    padding: 16px;
-}
-
-.card{
-    width: 200px;
-    padding: 10px;
-    background-color: #252525;
-    position: relative;
+.spotifyPlaylists {
+  padding: 16px;
 }
 
-.card img{
-    width: 100%;
-    object-fit: contain;
+.card {
+  width: 200px;
+  padding: 10px;
+  background-color: #252525;
+  position: relative;
 }
 
-.card > *{
-    padding-top:10px ;
+.card img {
+  width: 100%;
+  object-fit: contain;
 }
 
-.play-img{
-    color: #168b3f;
+.card > * {
+  padding-top: 10px;
 }
-.play{
-    position: absolute;
+
+.play-img {
+  color: #168b3f;
+}
+.play {
+  position: absolute;
+  right: 20px;
+  top: 190px;
+  opacity: 0;
+}
+
+.card:hover {
+  .play {
     right: 20px;
-    top: 190px;
-    opacity: 0;
+    top: 150px;
+    opacity: 1;
+    transition: ease-in-out 0.2s;
+  }
 }
 
-.card:hover{
-    .play{
-        right: 20px;
-        top: 150px;
-        opacity: 1;
-        transition: ease-in-out 0.2s;
-    }
+.SignUP {
+  font-weight: 600;
+  background-color: black;
+  color: #424141;
+  border: none;
+  height: 30px;
+  border-radius: 15px;
+  width: 80px;
+  cursor: pointer;
 }
 
-.SignUP{
-    font-weight: 600;
-    background-color: black;
-    color: #424141;
-    border: none;
-    height: 30px;
-    border-radius: 15px;
-    width: 80px;
-    cursor: pointer;
+.SignUP:hover {
+  font-size: 15px;
+  color: white;
+  transition: ease-in-out 0.2s;
+  width: 85px;
+  height: 35px;
+}
 
+.Login {
+  font-weight: 600;
+  background-color: rgb(255, 255, 255);
+  color: rgb(8, 8, 8);
+  border: none;
+  height: 30px;
+  border-radius: 15px;
+  width: 80px;
+  cursor: pointer;
+}
+
+.Login:hover {
+  font-size: 15px;
+  color: #424141;
+  transition: ease-in-out 0.2s;
+  width: 85px;
+  height: 35px;
+}
+
+.playbar {
+  position: absolute;
+  bottom: 30px;
+  background-color: #ffffff;
+  width: 98%;
+  padding: 12px;
+  display: flex;
+
+  justify-content: center;
+}
+
+.songList ul li {
+  list-style-type: decimal;
+}
+
+.songList {
+  padding: 0 22px;
+}
+
+.songList ul li {
+  display: flex;
+  border: 0.1px solid;
+  border-radius: 10px;
+  padding: 10px;
+  gap: 15px;
 }
 
 
-.SignUP:hover{
-    font-size: 15px;
-    color: white;
-    transition: ease-in-out 0.2s ;
-    width: 85px;
-    height: 35px;
+.songs-li {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.Login{
-    font-weight: 600;
-    background-color: rgb(255, 255, 255);
-    color: rgb(8, 8, 8);
-    border: none;
-    height: 30px;
-    border-radius: 15px;
-    width: 80px;
-    cursor: pointer;
-}
-
-.Login:hover{
-    font-size: 15px;
-    color: #424141;
-    transition: ease-in-out 0.2s ;
-    width: 85px;
-    height: 35px;
-}
-
-.playbar{
-    position: absolute;
-    bottom: 30px;
-    background-color: #5bda88;
-    width: 100%;
-    padding: 12px;
+.play-now{
     display: flex;
+    align-items: center;
     justify-content: center;
+    padding: 15px;
+    gap: 10px;
 }
 
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-info-play-now{
+    width: 30px;
+}
