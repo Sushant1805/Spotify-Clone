@@ -25,8 +25,8 @@ async function main(){
         for(let i = 0;i < songs.length; i++){
             songlist.innerHTML = songlist.innerHTML + `<li><img src="music.svg" alt="" class="invert">
                                 <div class="info">
-                                    <div class="songname">${songs[i].replaceAll("%20"," ")}</div>
-                                    <div class="songartist">Sushant Bhosale</div>
+                                    <div class="songname">${songs[i].replaceAll("%20", " ").replace(".m4a", "")}</div>
+                                    <div class="songartist">Artist</div>
                                 </div>
 
                                 <div class="play-now">
