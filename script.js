@@ -21,6 +21,9 @@ async function getSongs(){
 const playMusic = (track)=>{
     currentSong.src = "/Songs/" + track
     currentSong.play()
+    play.src = "pause.svg"
+    document.querySelector(".song-name").innerHTML = track
+    document.querySelector(".duration").innerHTML = ""
 }
 // .replace(".m4a", "") 
 async function main(){
@@ -44,7 +47,7 @@ async function main(){
                                 </div> </li>`
         }
     
-
+    // songs evenlistener
     Array.from(document.querySelector(".songList").getElementsByTagName("li")).forEach(e =>{
         e.addEventListener("click",element=>{
             playMusic(e.querySelector(".info").firstElementChild.innerHTML.trim())
@@ -52,6 +55,30 @@ async function main(){
         
     })
 
+    // buttons eventlistener
+    play.addEventListener("click",()=>{
+        if(currentSong.paused){
+            currentSong.play();
+            play.src = "pause.svg"
+        }else{
+            currentSong.pause();
+            play.src = "play.svg"
+        }
+    })
+
+    function convertToMinutesAndSeconds(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = Math.floor(seconds % 60); // Remove fractional part of seconds
+        
+        // Pad minutes and seconds with leading zeros if needed
+        const formattedMinutes = String(minutes).padStart(2, '0');
+        const formattedSeconds = String(remainingSeconds).padStart(2, '0');
+        
+        return `${formattedMinutes}:${formattedSeconds}`;
+    }
+    currentSong.addEventListener("timeupdate",()=>{
+        document.querySelector(".duration").innerHTML = `${convertToMinutesAndSeconds(currentSong.currentTime)}/${convertToMinutesAndSeconds(currentSong.duration)}`
+    })
 }
 
 

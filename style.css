@@ -247,3 +247,18 @@ body {
   left: 0%;
   transition: left 0.5s;
 }
+
+.play-btn{
+  cursor: pointer;
+}
+.songinfo .duration{
+
+}
+.playbar-inner-container{
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  color:  #a800ad;
+  filter: none;
+  padding: 0 5px 0 5px;
+}
