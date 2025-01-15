@@ -17,21 +17,36 @@ async function getSongs(){
 
     return songs;
 }
-
-const playMusic = (track)=>{
+function convertToMinutesAndSeconds(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = Math.floor(seconds % 60); // Remove fractional part of seconds
+    
+    // Pad minutes and seconds with leading zeros if needed
+    const formattedMinutes = String(minutes).padStart(2, '0');
+    const formattedSeconds = String(remainingSeconds).padStart(2, '0');
+    
+    return `${formattedMinutes}:${formattedSeconds}`;
+}
+const playMusic = (track,pause=false)=>{
     currentSong.src = "/Songs/" + track
-    currentSong.play()
-    play.src = "pause.svg"
-    document.querySelector(".song-name").innerHTML = track
-    document.querySelector(".duration").innerHTML = ""
+    if(!pause){
+        currentSong.play()
+        
+        play.src = "pause.svg"
+    }
+    document.querySelector(".song-name").innerHTML = decodeURI(track)
+  
+        document.querySelector(".duration").innerHTML = `${"00:00"}/${"00:00"}`
+  
+    
 }
 // .replace(".m4a", "") 
 async function main(){
-   
+    
     // Load all songs
     let songs = await getSongs()
     let songlist = document.querySelector(".songList").getElementsByTagName("ul")[0]
-    
+    playMusic(songs[0],true)
         for(let i = 0;i < songs.length; i++){
             songlist.innerHTML = songlist.innerHTML + `<li><img src="music.svg" alt="" class="invert">
                                 <div class="info">
@@ -66,18 +81,17 @@ async function main(){
         }
     })
 
-    function convertToMinutesAndSeconds(seconds) {
-        const minutes = Math.floor(seconds / 60);
-        const remainingSeconds = Math.floor(seconds % 60); // Remove fractional part of seconds
-        
-        // Pad minutes and seconds with leading zeros if needed
-        const formattedMinutes = String(minutes).padStart(2, '0');
-        const formattedSeconds = String(remainingSeconds).padStart(2, '0');
-        
-        return `${formattedMinutes}:${formattedSeconds}`;
-    }
+ // TIME UPDATE
     currentSong.addEventListener("timeupdate",()=>{
         document.querySelector(".duration").innerHTML = `${convertToMinutesAndSeconds(currentSong.currentTime)}/${convertToMinutesAndSeconds(currentSong.duration)}`
+        document.querySelector(".circle").style.left = (currentSong.currentTime / currentSong.duration) * 100 + "%";
+    })
+
+    // seekbaar event
+    document.querySelector(".seekbar").addEventListener("click",e=>{
+        let percent = (e.offsetX/e.target.getBoundingClientRect().width) * 100
+        document.querySelector(".circle").style.left = percent + "%"
+        currentSong.currentTime = (currentSong.duration * percent) / 100
     })
 }
 
