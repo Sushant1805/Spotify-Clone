@@ -15,9 +15,10 @@ body {
 
 }
 .left {
-  width: 25vw;
-  padding: 12px;
-  position: absolute;
+  width: 27vw;
+  position: relative;
+  top: -15px;
+
 }
 
 .home {
@@ -299,4 +300,28 @@ body {
       visibility:visible;
       filter: invert();
     }
+}
+
+
+  .durationandvolume {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.volume{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.volume:hover::after{
+
+}
+
+.range{
+  width: 80px;
+  cursor: pointer;
 }
