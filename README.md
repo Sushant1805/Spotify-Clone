@@ -17,9 +17,12 @@ A sleek and responsive **Spotify Clone** built using **HTML, CSS, and JavaScript
 - **JavaScript** - Dynamic interactions ⚡
 
 ## 📸 Preview
+<p align="center">
+  <img src="Assets/SS1.png" alt="Spotify Clone Screenshot" width="300">
+  <img src="Assets/SS2.png" alt="Spotify Clone Screenshot" width="300">
+  <img src="Assets/SS3.png" alt="Spotify Clone Screenshot" width="300">
+</p>
 
-![Spotify Clone Screenshot](https://via.placeholder.com/800x400)  
-![Spotify Clone Screenshot](Assets/SS1.png)
 
 ## 🛠️ Installation & Usage
 
