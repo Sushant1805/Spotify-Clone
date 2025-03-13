@@ -28,7 +28,7 @@ A sleek and responsive **Spotify Clone** built using **HTML, CSS, and JavaScript
 
 1️⃣ Clone this repository:
 ```bash
-git clone https://github.com/yourusername/spotify-clone.git
+git clone https://github.com/Sushant1805/Spotify-Clone.git
 ```
 
 2️⃣ Navigate to the project folder:
@@ -60,5 +60,5 @@ This project is open-source and available under the **MIT License**.
 
 ---
 
-💖 Made with love by [Your Name](https://github.com/yourusername) 🚀
+💖 Made with love by [Sushant Bhosale](https://github.com/Sushant1805) 🚀
 
