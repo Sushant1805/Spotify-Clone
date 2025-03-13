@@ -84,7 +84,9 @@ async function displayAlbums(){
 
     let anchors = div.getElementsByTagName("a")
     console.log(anchors)
-    Array.from(anchors).forEach(async e=>{
+    let array = Array.from(anchors)
+    for(let index=0; index<array.length;index++){
+        const e = array[index]
         if(e.href.includes("/Songs/")){
             let folder = e.href.split("/").slice(-1)[0];
             console.log(folder)
@@ -93,7 +95,7 @@ async function displayAlbums(){
             console.log(folder,a.json);
             let response = await a.json();
             let cardCont = document.querySelector(".cardContainer")
-            cardCont.innerHTML = cardCont.innerHTML +    ` <div data-folder="ncs" class="card rounded">
+            cardCont.innerHTML = cardCont.innerHTML +    ` <div data-folder="cs" class="card rounded">
                         <div class="play">
                             <svg fill="#168b3f" height="50px" width="50px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 481 481" xml:space="preserve" stroke="#168b3f" stroke-width="0.00481"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="1.9240000000000002"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M410.6,70.4C365.1,25,304.7,0,240.5,0S115.9,25,70.4,70.4C25,115.9,0,176.3,0,240.5s25,124.6,70.4,170.1 C115.8,456,176.2,481,240.5,481s124.6-25,170.1-70.4C456,365.2,481,304.8,481,240.5S456,115.9,410.6,70.4z M240.5,454 C122.8,454,27,358.2,27,240.5S122.8,27,240.5,27S454,122.8,454,240.5S358.2,454,240.5,454z"></path> <path d="M349.2,229.1l-152.6-97.9c-4.2-2.7-9.4-2.9-13.8-0.5c-4.3,2.4-7,6.9-7,11.8v195.7c0,4.9,2.7,9.5,7,11.8 c2,1.1,4.3,1.7,6.5,1.7c2.5,0,5.1-0.7,7.3-2.1l152.6-97.9c3.9-2.5,6.2-6.8,6.2-11.4S353,231.6,349.2,229.1z M202.8,313.7V167.3 l114.1,73.2L202.8,313.7z"></path> </g> </g> </g></svg>
                         </div>
@@ -105,15 +107,19 @@ async function displayAlbums(){
                     </div>`
 
         }
+    }
+
+    Array.from(document.getElementsByClassName("card")).forEach(e=>{
+        e.addEventListener("click",async item=>{
+            songs = await getSongs(`songs/${item.currentTarget.dataset.folder}`)
+            
+        })
     })
 }
 // .replace(".m4a", "") 
 async function main(){
     // display all albums
-
     displayAlbums();
-
-
 
     await getSongs("songs/ncs")
     playMusic(songs[0],true)
@@ -177,12 +183,7 @@ async function main(){
 
     // load playlist when clicked on card
 
-    Array.from(document.getElementsByClassName("card")).forEach(e=>{
-        e.addEventListener("click",async item=>{
-            songs = await getSongs(`songs/${item.currentTarget.dataset.folder}`)
-            
-        })
-    })
+  
 }
 
 
